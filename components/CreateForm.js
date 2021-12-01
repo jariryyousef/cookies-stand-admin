@@ -18,7 +18,7 @@ export default function Form(props) {
     return (
 
         <div className="px-20">
-        <form class="bg-green-300 shadow-md rounded px-20 pt-15 pb-14 mb-14" onSubmit={Handler}>
+        <form className="px-20 bg-green-300 rounded shadow-md pt-15 pb-14 mb-14" onSubmit={Handler}>
             <h1 className='my-6 text-2xl text-center'>Create Cookie Stand</h1>
 
             <div className="flex " >
