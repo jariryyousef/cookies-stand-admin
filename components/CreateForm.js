@@ -1,18 +1,26 @@
-export default function Form(props) {
+import useResource from '../hooks/useResource'
+
+export default function Form() {
+    const {  createResource } = useResource();
 
     function Handler(event) {
         event.preventDefault();
+        let array=[]
+        for (let i = 0; i < 14; i++) {
+           let value= Math.floor((Math.random() * (event.target.max.value - event.target.min.value) ))
+           array.push(Number(value)+ Number(event.target.min.value))
+        }
 
         const save_data = {
 
             location: event.target.location.value,
-            min_customers: event.target.min.value,
-            max_customers: event.target.max.value,
-            avg_cookies: event.target.avg.value,
-            hourly_sales : [48, 42, 30, 24, 42, 24, 36, 42, 42, 48, 36, 42, 24, 36]
+            minimum_customers_per_hour: event.target.min.value,
+            maximum_customers_per_hour: event.target.max.value,
+            average_cookies_per_sale: event.target.avg.value,
+            hourly_sales : array
 
         }
-        props.update(save_data)
+        createResource(save_data)
     }
 
     return (
