@@ -1,5 +1,5 @@
 
-export default function Footer({ }) {
+export default function Footer() {
 
     return (
         <footer className="p-3 text-3xl bg-green-400" >
